@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>David Adamu · Frontend Developer &amp; UI/UX Designer</title>
+<meta name="description" content="David Adamu designs interfaces in Figma and builds them in React. Frontend developer and UI/UX designer.">
+<meta property="og:title" content="David Adamu · Frontend Developer &amp; UI/UX Designer">
+<meta property="og:description" content="I design interfaces in Figma and build them in React.">
+<meta property="og:image" content="https://davidadamudev.github.io/images/hyeladi-avatar.png">
+<meta property="og:url" content="https://davidadamudev.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230E0E0E'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial' font-weight='700' font-size='26' fill='white' text-anchor='middle'%3EDA%3C/text%3E%3C/svg%3E">
+<style>
+  html { scroll-behavior:smooth; }
+  body { margin:0; background:#F6F5F2; color:#0E0E0E; -webkit-font-smoothing:antialiased; }
+  ::selection { background:#FF4D00; color:#fff; }
+  a { color:inherit; text-decoration:none; }
+  a:focus-visible, button:focus-visible { outline:2px solid #FF4D00; outline-offset:3px; border-radius:8px; }
+  .disp { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; }
+  .mono { font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-weight:500; letter-spacing:.02em; }
+  .lnk:hover { color:#FF4D00; }
+  .btn-dark:hover { background:#FF4D00 !important; }
+  .btn-line:hover { border-color:#0E0E0E !important; }
+  .row:hover { background:#FFFFFF; }
+  .hero-grid { display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:48px; align-items:end; }
+  .case { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); }
+  .two { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+  .three { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+  .facts { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); }
+  .exp-row { display:grid; grid-template-columns:150px minmax(0,1fr) auto; gap:24px; align-items:baseline; }
+  @keyframes pf-reveal { from { clip-path:inset(100% 0 0 0 round 20px); opacity:.4; } to { clip-path:inset(0 0 0 0 round 20px); opacity:1; } }
+  @keyframes pf-zoom { from { transform:scale(1.25); } to { transform:scale(1); } }
+  @keyframes pf-float { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-12px); } }
+  @keyframes pf-glow { 0%,100% { opacity:.55; transform:scale(1); } 50% { opacity:.85; transform:scale(1.06); } }
+  .pf-wrap { position:relative; perspective:1100px; max-width:100%; }
+  .pf-glow { position:absolute; inset:8% -6% -6% 8%; border-radius:28px; background:radial-gradient(60% 60% at 60% 60%, rgba(255,77,0,.45), rgba(255,77,0,0) 70%); filter:blur(28px); animation:pf-glow 6s ease-in-out infinite; pointer-events:none; }
+  .pf-float { position:relative; animation:pf-float 7s ease-in-out 1.4s infinite; }
+  .pf-card { position:relative; aspect-ratio:4/5; border-radius:20px; overflow:hidden; background:#E4E2DC; transform-style:preserve-3d; box-shadow:0 40px 80px -36px rgba(14,14,14,.45); animation:pf-reveal 1.1s cubic-bezier(.77,0,.18,1) both; will-change:transform; }
+  .pf-card img { animation:pf-zoom 1.6s cubic-bezier(.16,1,.3,1) both; }
+  .pf-shine { position:absolute; inset:0; pointer-events:none; mix-blend-mode:soft-light; transition:opacity .4s; }
+  @media (max-width:900px){
+    .hero-grid, .case, .two, .three { grid-template-columns:minmax(0,1fr); }
+    .facts { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .hide-sm { display:none !important; }
+    .exp-row { grid-template-columns:minmax(0,1fr); gap:4px; }
+  }
+  @media (max-width:900px){
+    .hero { padding:32px 0 40px !important; gap:32px !important; }
+    .hero .pf-wrap { order:-1; width:min(100%,260px); }
+    .sec { padding-top:64px !important; }
+    .case-media { min-height:280px !important; }
+    .phone-media { min-height:380px !important; }
+  }
+  @media (max-width:560px){
+    .topbar { padding:16px 0 !important; }
+    .hero .pf-wrap { width:min(72%,220px); }
+    .sec { padding-top:52px !important; }
+    .facts > div { padding:20px 16px !important; }
+    .cta-row > a { flex:1 1 auto; text-align:center; }
+    .case-media { min-height:240px !important; }
+    .phone-media { min-height:340px !important; }
+    .exp-row { padding:18px 4px !important; }
+  }
+  @media (prefers-reduced-motion:reduce){ *{ transition:none !important; } }
+</style>
+</head>
+<body>
+<div style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; min-height:100vh; padding:0 clamp(16px,4vw,48px); overflow-x:clip;">
+<div style="max-width:1120px; margin:0 auto;">
+
+  <!-- Top bar -->
+  <header class="topbar" style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding:24px 0; border-bottom:1px solid #E4E2DC;">
+    <a href="#top" style="display:flex; align-items:center; gap:12px; font-weight:600; font-size:15px;">
+      <span class="disp" style="width:34px; height:34px; border-radius:10px; background:#0E0E0E; color:#fff; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700;">DA</span>
+      David Adamu
+    </a>
+    <nav style="display:flex; align-items:center; gap:28px; font-size:14px; color:#55524C;">
+      <a class="lnk hide-sm" href="#work">Work</a>
+      <a class="lnk hide-sm" href="#experience">Experience</a>
+      <a class="lnk hide-sm" href="#skills">Skills</a>
+      <a class="btn-dark" href="mailto:hyeladi53@gmail.com" style="background:#0E0E0E; color:#fff; padding:10px 16px; border-radius:10px; font-weight:500; transition:background .2s;">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="hero-grid hero" style="padding:72px 0 56px;">
+    <div style="display:flex; flex-direction:column; gap:32px; max-width:660px;">
+
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <h1 class="disp" style="margin:0; font-size:clamp(40px,6vw,72px); line-height:1; letter-spacing:-0.035em; font-weight:800; text-wrap:balance;">Hi, I'm David!</h1>
+        <p style="margin:0; font-size:clamp(18px,1.8vw,22px); font-weight:500; color:#55524C;">Frontend Developer &amp; UI/UX Designer</p>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:16px; font-size:18px; line-height:1.65; color:#55524C; text-wrap:pretty;">
+        <p style="margin:0;">I design and build digital products, from the first Figma frame to the code that ships. I work across web and mobile, turning complex information into interfaces people find simple to use.</p>
+        <p style="margin:0;">I care about clean, accessible design and fast, reliable frontends, so nothing gets lost between the mockup and the live product.</p>
+      </div>
+
+      <div class="cta-row" style="display:flex; flex-wrap:wrap; gap:10px;">
+        <a class="btn-dark" href="#work" style="background:#0E0E0E; color:#fff; padding:14px 22px; border-radius:12px; font-weight:500; font-size:15px; transition:background .2s;">See my work →</a>
+        <a class="btn-line" href="https://drive.google.com/file/d/19pz9ketYxJiidWNARiKuNE1j1-QlYwfb/view?usp=sharing" target="_blank" rel="noopener" style="background:#fff; padding:14px 22px; border-radius:12px; font-weight:500; font-size:15px; border:1px solid #D6D3CC; transition:border-color .2s;">Download CV</a>
+        <a class="btn-line" href="mailto:hyeladi53@gmail.com" style="background:#fff; padding:14px 22px; border-radius:12px; font-weight:500; font-size:15px; border:1px solid #D6D3CC; transition:border-color .2s;">Contact me</a>
+      </div>
+    </div>
+    <div class="pf-wrap" id="pf">
+      <div class="pf-float">
+        <div class="pf-card" id="pf-card" style="transition:transform .9s cubic-bezier(.16,1,.3,1);">
+          <img src="images/hyeladi-avatar.png" alt="David Adamu" style="width:100%; height:100%; object-fit:cover; object-position:74% 35%; display:block; transform-origin:74% 35%; transition:transform .9s cubic-bezier(.16,1,.3,1);">
+          <div class="pf-shine" id="pf-shine" style="opacity:0;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Facts strip -->
+  <section class="facts" style="gap:1px; background:#E4E2DC; border:1px solid #E4E2DC; border-radius:20px; overflow:hidden;">
+    <div style="background:#F6F5F2; padding:28px 24px; display:flex; flex-direction:column; gap:10px; min-width:0;">
+      <span class="mono" style="font-size:11px; color:#8A867D;">EXPERIENCE</span>
+      <div class="disp" style="font-size:clamp(26px,2.6vw,34px); font-weight:700; letter-spacing:-0.02em; line-height:1.05;">5+ years</div>
+      <div style="font-size:14px; line-height:1.45; color:#55524C;">across design and development</div>
+    </div>
+    <div style="background:#F6F5F2; padding:28px 24px; display:flex; flex-direction:column; gap:10px; min-width:0;">
+      <span class="mono" style="font-size:11px; color:#8A867D;">PLATFORMS</span>
+      <div class="disp" style="font-size:clamp(26px,2.6vw,34px); font-weight:700; letter-spacing:-0.02em; line-height:1.05;">Web + Mobile</div>
+      <div style="font-size:14px; line-height:1.45; color:#55524C;">products I build for</div>
+    </div>
+    <div style="background:#F6F5F2; padding:28px 24px; display:flex; flex-direction:column; gap:10px; min-width:0;">
+      <span class="mono" style="font-size:11px; color:#8A867D;">IMPACT</span>
+      <div class="disp" style="font-size:clamp(26px,2.6vw,34px); font-weight:700; letter-spacing:-0.02em; line-height:1.05;">3,506</div>
+      <div style="font-size:14px; line-height:1.45; color:#55524C;">bills made searchable on BillTracker</div>
+    </div>
+    <div style="background:#F6F5F2; padding:28px 24px; display:flex; flex-direction:column; gap:10px; min-width:0;">
+      <span class="mono" style="font-size:11px; color:#8A867D;">WORKFLOW</span>
+      <div class="disp" style="font-size:clamp(26px,2.6vw,34px); font-weight:700; letter-spacing:-0.02em; line-height:1.05;">Figma → React</div>
+      <div style="font-size:14px; line-height:1.45; color:#55524C;">from design file to production code</div>
+    </div>
+  </section>
+
+  <!-- Work -->
+  <section id="work" class="sec" style="padding:88px 0 0; display:flex; flex-direction:column; gap:20px;">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; gap:16px; flex-wrap:wrap; margin-bottom:4px;">
+      <h2 class="disp" style="margin:0; font-size:clamp(32px,4.5vw,52px); letter-spacing:-0.03em; font-weight:700;">Selected work</h2>
+      <span class="mono" style="font-size:12px; color:#8A867D;">DESIGN AND FRONTEND</span>
+    </div>
+
+    <article class="case" style="background:#fff; border:1px solid #E4E2DC; border-radius:24px; overflow:hidden;">
+      <div class="case-media" style="background:#5F0F07; min-height:320px; position:relative;"><img src="images/billtracker-dashboard.png" alt="BillTracker dashboard" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:left top; display:block;"></div>
+      <div style="padding:clamp(24px,3vw,40px); display:flex; flex-direction:column; gap:20px; justify-content:center;">
+        <div class="mono" style="display:flex; gap:8px; flex-wrap:wrap; font-size:11px; color:#55524C;"><span style="color:#15803D; background:#F0FDF4; border:1px solid #BBF7D0; padding:4px 8px; border-radius:6px;">● LIVE</span><span style="background:#F6F5F2; padding:4px 8px; border-radius:6px;">NALTF</span><span style="background:#F6F5F2; padding:4px 8px; border-radius:6px;">2025</span></div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <h3 class="disp" style="margin:0; font-size:clamp(28px,3vw,36px); letter-spacing:-0.02em; font-weight:700;">BillTracker</h3>
+          <p style="margin:0; font-size:16px; line-height:1.6; color:#3F3C37; text-wrap:pretty;">One public place to follow every bill in Nigeria's 10th National Assembly: 3,506 bills with their status and progress, plus profiles of 109 senators and 360 House members. It replaced scattered PDFs, paper records and phone enquiries.</p>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; padding-top:16px; border-top:1px solid #EEECE7;"><div><div class="mono" style="font-size:11px; color:#8A867D; margin-bottom:4px;">MY ROLE</div><div style="font-size:15px; font-weight:500;">UI/UX design and frontend</div></div></div>
+        <div class="mono" style="display:flex; gap:6px; flex-wrap:wrap; font-size:11px; color:#55524C;"><span style="padding:4px 8px; border-radius:6px; background:#F6F5F2;">Figma</span><span style="padding:4px 8px; border-radius:6px; background:#F6F5F2;">React</span><span style="padding:4px 8px; border-radius:6px; background:#F6F5F2;">TypeScript</span><span style="padding:4px 8px; border-radius:6px; background:#F6F5F2;">Data viz</span></div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;"><a class="btn-dark" href="https://billtracker.naltf.gov.ng" target="_blank" rel="noopener" style="background:#0E0E0E; color:#fff; padding:12px 18px; border-radius:10px; font-weight:500; font-size:14px; transition:background .2s;">Visit live site ↗</a><a class="btn-line" href="https://www.figma.com/design/Sigxb2Rec69w3DgsvnZXoZ/NALTF-Billtraker?node-id=3-58" target="_blank" rel="noopener" style="padding:12px 18px; border-radius:10px; font-weight:500; font-size:14px; border:1px solid #D6D3CC; transition:border-color .2s;">Figma case study ↗</a></div>
+      </div>
+    </article>
+    <!-- Numbaz -->
+    <article class="case" style="background:#fff; border:1px solid #E4E2DC; border-radius:24px; overflow:hidden;">
+      <div style="background:linear-gradient(160deg,#0F4A45 0%,#0A2E2C 100%); padding:clamp(28px,3.5vw,48px); display:flex; align-items:center; justify-content:center; min-height:420px;" class="case-media phone-media">
+        <div style="width:min(60%,250px); aspect-ratio:390/852; border-radius:34px; padding:9px; background:#0E0E0E; box-shadow:0 40px 80px -24px rgba(0,0,0,.6), 0 0 0 1px rgba(255,255,255,.08);">
+          <div style="width:100%; height:100%; border-radius:26px; overflow:hidden; background:#F7F7F8; position:relative;"><img src="images/numbaz-home.png" alt="Numbaz home screen showing today's sales, quick actions and customers owing" style="width:100%; height:100%; object-fit:cover; object-position:top; display:block;"></div>
+        </div>
+      </div>
+      <div style="padding:clamp(24px,3vw,40px); display:flex; flex-direction:column; gap:20px; justify-content:center;">
+        <div class="mono" style="display:flex; gap:8px; flex-wrap:wrap; font-size:11px; color:#55524C;"><span style="color:#C2410C; background:#FFF1E8; border:1px solid #FED7AA; padding:4px 8px; border-radius:6px;">● IN PROGRESS</span><span style="background:#F6F5F2; padding:4px 8px; border-radius:6px;">NUMBAZ</span><span style="background:#F6F5F2; padding:4px 8px; border-radius:6px;">2026</span></div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <h3 class="disp" style="margin:0; font-size:clamp(28px,3vw,36px); letter-spacing:-0.02em; font-weight:700;">Numbaz mobile app</h3>
+          <p style="margin:0; font-size:17px; line-height:1.5; color:#0E0E0E; font-weight:500; text-wrap:pretty;">Market traders count their sales, but few know their real profit.</p>
+          <p style="margin:0; font-size:16px; line-height:1.6; color:#3F3C37; text-wrap:pretty;">Numbaz is an offline-first bookkeeping app for small African businesses like market traders, phone sellers and spare-parts dealers. It tracks sales, expenses, stock and customer debts, then shows real profit in Naira.</p>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; padding-top:16px; border-top:1px solid #EEECE7;"><div><div class="mono" style="font-size:11px; color:#8A867D; margin-bottom:4px;">MY ROLE</div><div style="font-size:15px; font-weight:500;">Built the full app (AI-assisted)</div></div><div><div class="mono" style="font-size:11px; color:#8A867D; margin-bottom:4px;">PLATFORM</div><div style="font-size:15px; font-weight:500;">iOS and Android</div></div></div>
+        <div class="mono" style="display:flex; gap:6px; flex-wrap:wrap; font-size:11px; color:#55524C;"><span style="padding:4px 8px; border-radius:6px; background:#F6F5F2;">React Native</span><span style="padding:4px 8px; border-radius:6px; background:#F6F5F2;">Expo</span><span style="padding:4px 8px; border-radius:6px; background:#F6F5F2;">TypeScript</span><span style="padding:4px 8px; border-radius:6px; background:#F6F5F2;">SQLite</span><span style="padding:4px 8px; border-radius:6px; background:#F6F5F2;">Drizzle ORM</span><span style="padding:4px 8px; border-radius:6px; background:#F6F5F2;">NativeWind</span></div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;"><a class="btn-dark" href="https://numbazapp.com/" target="_blank" rel="noopener" style="background:#0E0E0E; color:#fff; padding:12px 18px; border-radius:10px; font-weight:500; font-size:14px; transition:background .2s;">Numbaz website ↗</a><span class="mono" style="font-size:12px; color:#8A867D;">Case study coming after launch</span></div>
+      </div>
+    </article>
+
+
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="sec" style="padding:88px 0 0;">
+    <h2 class="disp" style="margin:0 0 24px; font-size:clamp(32px,4.5vw,52px); letter-spacing:-0.03em; font-weight:700;">Experience</h2>
+    <div style="border-top:1px solid #E4E2DC;">
+      <div class="exp-row row" style="padding:22px 12px; border-bottom:1px solid #E4E2DC; transition:background .2s;"><span class="mono" style="font-size:13px; color:#8A867D;">2026 – Now</span><div><div style="font-size:18px; font-weight:600;">Frontend Developer · Numbaz</div><div style="font-size:15px; color:#55524C; margin-top:4px;">Building the company's mobile app interface.</div></div><span></span></div>
+      <div class="exp-row row" style="padding:22px 12px; border-bottom:1px solid #E4E2DC; transition:background .2s;"><span class="mono" style="font-size:13px; color:#8A867D;">2024 – 2026</span><div><div style="font-size:18px; font-weight:600;">UI/UX Designer and Frontend Developer · NALTF</div><div style="font-size:15px; color:#55524C; margin-top:4px;">Designed and built BillTracker and the Appraisal Hub. Accessible, data-dense UI in React and TypeScript.</div></div><span></span></div>
+      <div class="exp-row row" style="padding:22px 12px; border-bottom:1px solid #E4E2DC; transition:background .2s;"><span class="mono" style="font-size:13px; color:#8A867D;">2023 – 2024</span><div><div style="font-size:18px; font-weight:600;">Network Monitoring Engineer · Suburban Fiber</div><div style="font-size:15px; color:#55524C; margin-top:4px;">Installed and supported IP network solutions.</div></div><span></span></div>
+      <div class="exp-row row" style="padding:22px 12px; border-bottom:1px solid #E4E2DC; transition:background .2s;"><span class="mono" style="font-size:13px; color:#8A867D;">2021 – 2022</span><div><div style="font-size:18px; font-weight:600;">Graphic Designer · AFEN Blockchain</div><div style="font-size:15px; color:#55524C; margin-top:4px;">Visual design across print and digital, kept on brand.</div></div><span></span></div>
+      <div class="exp-row row" style="padding:22px 12px; border-bottom:1px solid #E4E2DC; transition:background .2s;"><span class="mono" style="font-size:13px; color:#8A867D;">2018</span><div><div style="font-size:18px; font-weight:600;">Software Developer Intern · Triune Built Tech</div><div style="font-size:15px; color:#55524C; margin-top:4px;">Supported development, QA and UX on new products.</div></div><span></span></div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="sec" style="padding:88px 0 0;">
+    <h2 class="disp" style="margin:0 0 24px; font-size:clamp(32px,4.5vw,52px); letter-spacing:-0.03em; font-weight:700;">Education</h2>
+    <div style="border-top:1px solid #E4E2DC;">
+      <div class="exp-row row" style="padding:22px 12px; border-bottom:1px solid #E4E2DC; transition:background .2s;"><span class="mono" style="font-size:13px; color:#8A867D;">2017 – 2021</span><div><div style="font-size:18px; font-weight:600;">BSc Information Technology</div><div style="font-size:15px; color:#55524C; margin-top:4px;">Eastern Mediterranean University, North Cyprus</div></div><span></span></div>
+      <div class="exp-row row" style="padding:22px 12px; border-bottom:1px solid #E4E2DC; transition:background .2s;"><span class="mono" style="font-size:13px; color:#8A867D;">2016 – 2017</span><div><div style="font-size:18px; font-weight:600;">National Diploma in Software Engineering</div><div style="font-size:15px; color:#55524C; margin-top:4px;">Nspire School of Management &amp; Technology, Abuja</div></div><span></span></div>
+      <div class="exp-row row" style="padding:22px 12px; border-bottom:1px solid #E4E2DC; transition:background .2s;"><span class="mono" style="font-size:13px; color:#8A867D;">2015</span><div><div style="font-size:18px; font-weight:600;">Diploma in Website Development</div><div style="font-size:15px; color:#55524C; margin-top:4px;">Aptech Computer Education, Abuja</div></div><span></span></div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="sec" style="padding:88px 0 0; display:flex; flex-direction:column; gap:16px;">
+    <h2 class="disp" style="margin:0 0 8px; font-size:clamp(32px,4.5vw,52px); letter-spacing:-0.03em; font-weight:700;">Skills</h2>
+    <span class="mono" style="font-size:12px; color:#FF4D00;">TOOLS I USE DAILY</span>
+    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:12px;">
+        <div style="background:#fff; border:1px solid #E4E2DC; border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:14px;"><img src="icons/figma.svg" alt="" width="28" height="28"><div><div style="font-size:15px; font-weight:600;">Figma</div><div style="font-size:13px; color:#8A867D; margin-top:2px;">Design</div></div></div>
+        <div style="background:#fff; border:1px solid #E4E2DC; border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:14px;"><img src="icons/react.svg" alt="" width="28" height="28"><div><div style="font-size:15px; font-weight:600;">React</div><div style="font-size:13px; color:#8A867D; margin-top:2px;">Framework</div></div></div>
+        <div style="background:#fff; border:1px solid #E4E2DC; border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:14px;"><img src="icons/typescript.svg" alt="" width="28" height="28"><div><div style="font-size:15px; font-weight:600;">TypeScript</div><div style="font-size:13px; color:#8A867D; margin-top:2px;">Language</div></div></div>
+        <div style="background:#fff; border:1px solid #E4E2DC; border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:14px;"><img src="icons/javascript.svg" alt="" width="28" height="28"><div><div style="font-size:15px; font-weight:600;">JavaScript</div><div style="font-size:13px; color:#8A867D; margin-top:2px;">Language</div></div></div>
+        <div style="background:#fff; border:1px solid #E4E2DC; border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:14px;"><img src="icons/html5.svg" alt="" width="28" height="28"><div><div style="font-size:15px; font-weight:600;">HTML</div><div style="font-size:13px; color:#8A867D; margin-top:2px;">Markup</div></div></div>
+        <div style="background:#fff; border:1px solid #E4E2DC; border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:14px;"><img src="icons/css.svg" alt="" width="28" height="28"><div><div style="font-size:15px; font-weight:600;">CSS</div><div style="font-size:13px; color:#8A867D; margin-top:2px;">Styling</div></div></div>
+        <div style="background:#fff; border:1px solid #E4E2DC; border-radius:16px; padding:18px; display:flex; flex-direction:column; gap:14px;"><img src="icons/git.svg" alt="" width="28" height="28"><div><div style="font-size:15px; font-weight:600;">Git</div><div style="font-size:13px; color:#8A867D; margin-top:2px;">Version control</div></div></div>
+    </div>
+    <div class="two" style="margin-top:8px;">
+      <div style="background:#fff; border:1px solid #E4E2DC; border-radius:20px; padding:24px; display:flex; flex-direction:column; gap:16px;">
+        <span class="mono" style="font-size:12px; color:#FF4D00;">DESIGN</span>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; font-size:14px;"><span style="padding:8px 12px; border-radius:8px; background:#F6F5F2;">UI design</span><span style="padding:8px 12px; border-radius:8px; background:#F6F5F2;">Component libraries</span><span style="padding:8px 12px; border-radius:8px; background:#F6F5F2;">Style guides</span><span style="padding:8px 12px; border-radius:8px; background:#F6F5F2;">Typography</span><span style="padding:8px 12px; border-radius:8px; background:#F6F5F2;">Visual design</span></div>
+      </div>
+      <div style="background:#fff; border:1px solid #E4E2DC; border-radius:20px; padding:24px; display:flex; flex-direction:column; gap:16px;">
+        <span class="mono" style="font-size:12px; color:#FF4D00;">ENGINEERING</span>
+        <div style="display:flex; flex-wrap:wrap; gap:8px; font-size:14px;"><span style="padding:8px 12px; border-radius:8px; background:#F6F5F2;">Accessibility (WCAG)</span><span style="padding:8px 12px; border-radius:8px; background:#F6F5F2;">Responsive UI</span><span style="padding:8px 12px; border-radius:8px; background:#F6F5F2;">Performance</span><span style="padding:8px 12px; border-radius:8px; background:#F6F5F2;">Data visualisation</span><span style="padding:8px 12px; border-radius:8px; background:#F6F5F2;">REST APIs</span></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact -->
+  <section class="sec" style="padding:88px 0 48px;">
+    <div style="background:#0E0E0E; color:#fff; border-radius:28px; padding:clamp(28px,5vw,64px); display:flex; flex-direction:column; gap:28px;">
+      <span class="mono" style="font-size:12px; color:#A8A49B;">HIRING FOR FRONTEND OR UI/UX?</span>
+      <h2 class="disp" style="margin:0; font-size:clamp(36px,6vw,72px); line-height:.95; letter-spacing:-0.035em; font-weight:800; text-wrap:balance;">Let's talk.</h2>
+      <div style="display:flex; flex-wrap:wrap; gap:10px;">
+        <a href="mailto:hyeladi53@gmail.com" style="background:#FF4D00; color:#fff; padding:14px 22px; border-radius:12px; font-weight:500; font-size:15px;">hyeladi53@gmail.com</a>
+        <a href="https://github.com/davidadamudev" target="_blank" rel="noopener" style="padding:14px 22px; border-radius:12px; font-weight:500; font-size:15px; border:1px solid #3A3833; color:#fff;">GitHub ↗</a>
+        <a href="https://drive.google.com/file/d/19pz9ketYxJiidWNARiKuNE1j1-QlYwfb/view?usp=sharing" target="_blank" rel="noopener" style="padding:14px 22px; border-radius:12px; font-weight:500; font-size:15px; border:1px solid #3A3833; color:#fff;">Download CV</a>
+      </div>
+    </div>
+    <footer class="mono" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:12px; color:#8A867D; padding:28px 4px 0;">
+      <span>© 2026 David Adamu</span>
+    </footer>
+  </section>
+
+</div>
+</div>
+<script>
+(function(){
+  var wrap=document.getElementById('pf'), card=document.getElementById('pf-card'),
+      img=card&&card.querySelector('img'), shine=document.getElementById('pf-shine');
+  if(!wrap||!card) return;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fast='transform .15s ease-out', slow='transform .9s cubic-bezier(.16,1,.3,1)';
+  wrap.addEventListener('mousemove',function(e){
+    if(reduce) return;
+    var r=wrap.getBoundingClientRect(), x=(e.clientX-r.left)/r.width, y=(e.clientY-r.top)/r.height;
+    var rx=(0.5-y)*14, ry=(x-0.5)*16;
+    card.style.transition=fast; img.style.transition=fast;
+    card.style.transform='rotateX('+rx.toFixed(2)+'deg) rotateY('+ry.toFixed(2)+'deg) scale(1.03)';
+    img.style.transform='scale(1.1) translate('+(-ry*0.7).toFixed(1)+'px,'+(rx*0.7).toFixed(1)+'px)';
+    shine.style.background='radial-gradient(circle at '+(x*100).toFixed(0)+'% '+(y*100).toFixed(0)+'%, rgba(255,255,255,.55), rgba(255,255,255,0) 55%)';
+    shine.style.opacity=1;
+  });
+  wrap.addEventListener('mouseleave',function(){
+    card.style.transition=slow; img.style.transition=slow;
+    card.style.transform=''; img.style.transform=''; shine.style.opacity=0;
+  });
+})();
+</script>
+</body>
+</html>
